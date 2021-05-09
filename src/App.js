@@ -4,7 +4,6 @@ import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
 import { useEffect, useState } from 'react';
 
 function App() {
-  const [likeColor, setLikeColor] = useState('');
   const [users, setUser] = useState([]);
   const [singleUser, setSingleUser] = useState({});
   const [randomUser, setRandomUser] = useState({});
@@ -35,6 +34,7 @@ function App() {
   },[])
 
  
+  const [likeColor, setLikeColor] = useState('');
   const handleLike = () => {
     const color = likeColor ? '' : 'primary';
     setLikeColor(color);
@@ -47,6 +47,9 @@ function App() {
         <ThumbUpAltIcon color="primary"></ThumbUpAltIcon>
         <ThumbUpAltIcon onClick={handleLike} color={likeColor}></ThumbUpAltIcon>
         <ThumbUpAltIcon onClick={() => setLikeColor(likeColor ? '' : 'primary')} color={likeColor}></ThumbUpAltIcon>
+        
+        
+        
         <h1>Name: {singleUser.name}</h1>
         <h2>Random User Gender: {randomUser.gender}</h2>
 
